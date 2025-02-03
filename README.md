@@ -1,2 +1,2 @@
 # dynamic-ranking
-a library for building interactive weighted ranking systems
+a library for building interactive subjective weighted ranking systems
