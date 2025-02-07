@@ -1,0 +1,6 @@
+[
+    { "name": "item0", "criteria0": 5,  "criteria1": 10, "criteria2": 15 },
+    { "name": "item1", "criteria0": 15, "criteria1": 1,  "criteria2": 5 },
+    { "name": "item2", "criteria0": 20, "criteria1": 4,  "criteria2": 10 },
+    { "name": "item3", "criteria0": 5,  "criteria1": 5,  "criteria2": 5 }
+]

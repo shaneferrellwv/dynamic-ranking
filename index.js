@@ -7,7 +7,7 @@ try {
         dataSource: './data.json',
         model: 'WSM',
         normalization: 'linear',
-        criteriaColumns: [1, 2, 3],
+        criteriaColumns: ["criteria0", "criteria1", "criteria2"],
         defaultWeights: [2, 3, 4]
     });
 
