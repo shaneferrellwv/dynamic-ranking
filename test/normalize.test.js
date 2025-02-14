@@ -1,6 +1,8 @@
 import { expect, test } from 'vitest'
 import { normalize } from "../lib/normalize.js"
 
+// ============ linear normalization =================
+
 test('linear normalization of simple data', () => {
   const input = [
     { name: "item0", criteria0: 5,  criteria1: 10, criteria2: 15 },
@@ -76,7 +78,6 @@ test('linear normalization does not affect non-specified columns', () => {
     { name: "b", score: 3, weight: 150 },
     { name: "c", score: 2, weight: 200 }
   ];
-  // For score: min = 1, max = 3
   const expected = [
     { name: "a", score: 0, weight: 100 },
     { name: "b", score: 1, weight: 150 },
@@ -90,5 +91,26 @@ test('linear normalization with empty array', () => {
   const input = [];
   const expected = [];
   const output = normalize(input, "linear", ["score"]);
+  expect(output).toEqual(expected);
+});
+
+// ============ logarthmic normalization =================
+
+test('log normalization of simple data', () => {
+  const input = [
+    { name: "item0", criteria0: 1 },
+    { name: "item1", criteria0: 10 },
+    { name: "item2", criteria0: 100 },
+    { name: "item3", criteria0: 1000 },
+    { name: "item4", criteria0: 10000 }
+  ];
+  const expected = [
+    { name: "item0", criteria0: 0 },
+    { name: "item1", criteria0: 2.302585092994046 },
+    { name: "item2", criteria0: 4.605170185988092 },
+    { name: "item3", criteria0: 6.907755278982137 },
+    { name: "item4", criteria0: 9.210340371976184 }
+  ];
+  const output = normalize(input, "log", ["criteria0"]);
   expect(output).toEqual(expected);
 });
