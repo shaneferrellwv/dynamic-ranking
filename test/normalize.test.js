@@ -114,3 +114,18 @@ test('log normalization of simple data', () => {
   const output = normalize(input, "log", ["criteria0"]);
   expect(output).toEqual(expected);
 });
+
+test('log normalization with constant values', () => {
+  const input = [
+    { name: "a", score: 10 },
+    { name: "b", score: 10 },
+    { name: "c", score: 10 }
+  ];
+  const expected = [
+    { name: "a", score: 0 },
+    { name: "b", score: 0 },
+    { name: "c", score: 0 }
+  ];
+  const output = normalize(input, "log", ["score"]);
+  expect(output).toEqual(expected);
+});
