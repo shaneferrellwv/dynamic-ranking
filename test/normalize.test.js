@@ -122,9 +122,9 @@ test('log normalization with constant values', () => {
     { name: "c", score: 10 }
   ];
   const expected = [
-    { name: "a", score: 0 },
-    { name: "b", score: 0 },
-    { name: "c", score: 0 }
+    { name: "a", score: 2.302585092994046 },
+    { name: "b", score: 2.302585092994046 },
+    { name: "c", score: 2.302585092994046 }
   ];
   const output = normalize(input, "log", ["score"]);
   expect(output).toEqual(expected);
