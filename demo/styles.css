@@ -1,0 +1,22 @@
+.rankings-window {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    overflow-y: auto;
+    max-height: 300px; /* adjust height as needed */
+}
+
+/* Styling for the ranking elements */
+.ranking-element {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    height: 100vh;             /* Take up full viewport height */
+    margin: 0;                 /* Remove default margin */
+    font-family: Arial, sans-serif; /* Optional: Choose a nice font */
+  }
