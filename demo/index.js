@@ -16,7 +16,7 @@ try {
         containerId: 'ranking',
         model: 'WSM',
         normalization: 'linear',
-        criteriaColumns: ["Age", "K%", "IP"],
+        featureColumns: ["Age", "K%", "IP"],
         defaultWeights: [2, 3, 4]
     });
 
