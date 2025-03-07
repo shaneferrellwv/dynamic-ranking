@@ -17,7 +17,8 @@ try {
             id: "ERA",
             name: "ERA",
             path: "ERA",
-            normalization: 'linear',
+            normalization: 'standard',
+            strategy: 'minimize',
             defaultWeight: 0,
             userWeight: null,
             minWeight: -5,
@@ -28,16 +29,18 @@ try {
             name: "WHIP",
             path: "WHIP",
             normalization: 'log',
+            strategy: 'minimize',
             defaultWeight: 1,
             userWeight: null,
             minWeight: 0,
             maxWeight: 5
         },
         {
-            id: "BB9",      // id field cannot contain non-alaphabetic/non-numeric characters
-            name: "BB/9",
-            path: "BB/9",
-            normalization: 'log',
+            id: "K9",      // id field cannot contain non-alaphabetic/non-numeric characters
+            name: "K/9",
+            path: "K/9",
+            strategy: 'maximize',
+            normalization: 'linear',
             defaultWeight: 5,
             userWeight: null,
             minWeight: 0,
