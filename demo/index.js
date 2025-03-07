@@ -11,12 +11,11 @@ try {
     // rawData = rawData['stats'][0]['splits'];
     rawData = rawData.data;
 
-    console.log(rawData);
-
     // specify features and their properties
     const features = [
         {
             id: "ERA",
+            name: "ERA",
             path: "ERA",
             normalization: 'linear',
             defaultWeight: 0,
@@ -26,6 +25,7 @@ try {
         },
         {
             id: "WHIP",
+            name: "WHIP",
             path: "WHIP",
             normalization: 'log',
             defaultWeight: 1,
@@ -33,15 +33,16 @@ try {
             minWeight: 0,
             maxWeight: 5
         },
-        // {
-        //     id: "BB/9",
-        //     path: "BB/9",
-        //     normalization: 'log',
-        //     defaultWeight: 5,
-        //     userWeight: null,
-        //     minWeight: 0,
-        //     maxWeight: 10
-        // },
+        {
+            id: "BB9",      // id field cannot contain non-alaphabetic/non-numeric characters
+            name: "BB/9",
+            path: "BB/9",
+            normalization: 'log',
+            defaultWeight: 5,
+            userWeight: null,
+            minWeight: 0,
+            maxWeight: 10
+        },
     ];
 
     // specify container, model, primary key, and score decimal places
