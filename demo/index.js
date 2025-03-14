@@ -51,7 +51,7 @@ try {
         },
     ];
 
-    // specify container, model, primary key, and score decimal places
+    // specify container, model, primary key, score decimal places, and ranking sort method
     const containerId = 'ranking';
     const model = 'weighted-sum';
     const primaryKey = {
@@ -59,6 +59,7 @@ try {
         path: "player:fullName"
     }
     const digits = 2;
+    const sort = "descending";
 
     // clean data
     const cleanData = clean(rawData, features, primaryKey);
@@ -71,7 +72,8 @@ try {
         model,
         features,
         primaryKey,
-        digits
+        digits,
+        sort
     );
 }
 
