@@ -73,7 +73,6 @@ try {
         primaryKey,
         digits
     );
-
 }
 
 catch (error) {
