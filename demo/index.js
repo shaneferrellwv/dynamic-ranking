@@ -64,7 +64,6 @@ try {
     // clean data
     const cleanData = clean(rawData, features, primaryKey);
 
-
     // construct ranking system
     new DynamicRanking(
         containerId,
