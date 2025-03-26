@@ -1,12 +1,14 @@
 import { fetchData } from "../lib/data-fetch.js";
 import { clean } from "../lib/clean.js";
-import { DynamicRanking } from "../lib/dynamic-ranking";
+import { DynamicRanking } from "../lib/dynamic-ranking.js";
 
 try {
-    // get data for rankings
-    const dataSource = 'https://statsapi.mlb.com/api/v1/stats?stats=season&group=pitching&season=2024&teamId=136&playerPool=ALL';
-    var rawData = await fetchData(dataSource);
+    // craft API URL
+    const baseURL = 
 
+    // get data for rankings
+    const dataSource = 'https://statsapi.mlb.com/api/v1/stats?stats=season&group=pitching&season=2024&playerPool=ALL&limit=853';
+    var rawData = await fetchData(dataSource);
 
     // manipulate/parse data from file as necessary
     rawData = rawData['stats'][0]['splits'];
@@ -22,10 +24,10 @@ try {
             path: "stat:era",
             normalization: 'standard',
             strategy: 'minimize',
-            defaultWeight: 0,
+            defaultWeight: 5,
             userWeight: null,
-            minWeight: -5,
-            maxWeight: 5
+            minWeight: 0,
+            maxWeight: 10
         },
         {
             id: "WHIP",
@@ -33,13 +35,13 @@ try {
             path: "stat:whip",
             normalization: 'log',
             strategy: 'minimize',
-            defaultWeight: 1,
+            defaultWeight: 5,
             userWeight: null,
             minWeight: 0,
-            maxWeight: 5
+            maxWeight: 10
         },
         {
-            id: "K9",      // id field cannot contain non-alaphabetic/non-numeric characters
+            id: "K9",
             name: "K/9",
             path: "stat:strikeoutsPer9Inn",
             strategy: 'maximize',
@@ -49,6 +51,17 @@ try {
             minWeight: 0,
             maxWeight: 10
         },
+        {
+            id: "BB9",
+            name: "BB/9",
+            path: "stat:walksPer9Inn",
+            strategy: 'minimize',
+            normalization: 'linear',
+            defaultWeight: 5,
+            userWeight: null,
+            minWeight: 0,
+            maxWeight: 10
+        }
     ];
 
     // specify container, model, primary key, score decimal places, and ranking sort method

@@ -1,33 +1,105 @@
-.rankings-window {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-    overflow-y: auto;
-    max-height: 300px; /* adjust height as needed */
-    width: fit-content;
-    margin-bottom: 20px;
-    text-align: left;
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-body {
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.navbar {
     display: flex;
-    flex-direction: column;    /* Stack elements vertically */
-    align-items: center;       /* Center elements horizontally */
-    height: 100vh;             /* Take the full height of the viewport */
-    margin: 0;                 /* Remove default margin */
-    text-align: center;        /* Centers the text in the <h1> */
-}
-  
-h1 {
-    margin-bottom: 20px;       /* Adds space below the heading */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
 }
 
-h2 {
-    font-size: 18px; /* Set the font size */
-    color: #333; /* Set the text color */
-    text-align: center; /* Optionally, center the text */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
 }
 
-.slider {
-    margin-bottom: 20px;
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.logo a {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.selection-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.selectors {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 15px;
+    background-color: #e2ece6;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.stats {
+    flex: 2;
+    border-radius: 15px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.slider-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.slider-group label {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+label, select, button, input[type="number"], input[type="range"], .teams-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.rankings-placeholder {
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+    .selection-container {
+        flex-direction: column;
+    }
+
+    .selectors {
+        max-width: 100%;
+    }
 }

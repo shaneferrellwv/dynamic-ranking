@@ -1,22 +1,69 @@
-<!-- <!doctype html>
-<html>
-  <body>
-    <h1>Hello, world!</h1>
-    <div id="ranking"></div>
-  </body>
-
-  <script src="./index.js" type="module"></script>
-</html> -->
-
-<!doctype html>
-<html>
-  <head>
-    <title>FanScale</title>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fanscale.dev</title>
     <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>FanScale Demo Application</h1>
-    <div id="ranking"></div>
-    <script src="./index.js" type="module"></script>
-  </body>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Placeholder">
+                <a href="index.html">fanscale.dev</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="https://github.com/shaneferrellwv/dynamic-ranking">Library</a>
+                <!-- <a href="#">More Demos</a> -->
+                <a href="#">About</a>
+            </div>
+        </nav>
+
+        <div class="selection-container">
+            <div class="selectors">
+                <label>Data
+                    <select><option>MLB Stats API</option></select>
+                </label>
+
+                <label for="team-select">Team</label>
+                <select id="team-select"></select>
+
+
+                <label>Seasons
+                    <select id="season">
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                    </select>
+                </label>
+
+                <label>Group
+                    <select>
+                        <option>Pitching</option>
+                        <option>Hitting</option>
+                        <option>Fielding</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="stats">
+                <p>Sliders content placeholder...</p>
+            </div>
+            
+        </div>
+
+        <div class="rankings-placeholder">
+            <p>Rankings content placeholder...</p>
+        </div>
+
+
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="fanscale.js"></script>
+</body>
 </html>
