@@ -25,38 +25,40 @@
 
         <div class="selection-container">
             <div class="selectors">
-                <label>Data
-                    <select><option>MLB Stats API</option></select>
-                </label>
-
-                <label for="team-select">Team</label>
-                <select id="team-select"></select>
-
-
-                <label>Seasons
-                    <select id="season">
-                        <option>2023</option>
-                        <option>2024</option>
-                        <option>2025</option>
+                <label for="source-select">Data
+                    <select id="source-select">
+                      <option value="https://statsapi.mlb.com/api/v1/stats?stats=season">MLB Stats API</option>
                     </select>
                 </label>
 
-                <label>Group
-                    <select>
-                        <option>Pitching</option>
-                        <option>Hitting</option>
-                        <option>Fielding</option>
+                <label for="season-select">Season
+                  <select id="season-select">
+                  </select>
+                </label>
+
+                <label for="team-select">Team
+                  <select id="team-select">
+
+                  </select>
+                </label>
+
+
+                <label for="group-select">Group
+                    <select id="group-select">
+                        <option value="pitching">Pitching</option>
+                        <option value="hitting">Hitting</option>
+                        <option value="fielding">Fielding</option>
                     </select>
                 </label>
             </div>
 
-            <div class="stats">
+            <div id='sliders-container' class="sliders-container">
                 <p>Sliders content placeholder...</p>
             </div>
             
         </div>
 
-        <div class="rankings-placeholder">
+        <div id='rankings-container' class="rankings-placeholder">
             <p>Rankings content placeholder...</p>
         </div>
 
