@@ -25,7 +25,6 @@ export async function createDynamicRanking() {
 
         // manipulate/parse data from file as necessary
         rawData = rawData['stats'][0]['splits'];
-        // rawData = rawData.data;
 
         // console.log(rawData)
 
@@ -92,7 +91,7 @@ export async function createDynamicRanking() {
         // clean data
         const cleanData = clean(rawData, features, primaryKey);
 
-        console.log(cleanData)
+        console.log("cleaned data: ", cleanData)
 
         // construct ranking system
         new DynamicRanking(

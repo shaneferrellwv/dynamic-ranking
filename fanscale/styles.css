@@ -103,3 +103,44 @@ label, select, button, input[type="number"], input[type="range"], .teams-contain
         max-width: 100%;
     }
 }
+
+
+
+
+
+.new-slider-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+    
+.feature-dropdown {
+    flex: 1;
+    min-width: 0; /* Prevents overflow */
+}
+    
+.add-slider-btn {
+    width: 100px; /* Fixed width */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+      
+
+.slider-element {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.slider-label {
+    flex: 1;
+}
+
+.slider-input {
+    flex: 10;
+}
+
+.remove-button {
+    flex: 1;
+    cursor: pointer; /* optional: pointer on hover */
+  }
+  
