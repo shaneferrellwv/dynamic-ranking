@@ -59,6 +59,7 @@ try {
   addGroupSelectionListener();
   fetchSeasons();
   fetchTeams();
+  createDynamicRanking();
 }
 
 catch (error) {
