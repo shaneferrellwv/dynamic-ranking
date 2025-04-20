@@ -97,7 +97,7 @@ unique identifier of model to be used for rankings
 
 `model := [ 'weighted-sum' | 'weighted-product' | ... ]
 
-see the [Models](../models/) page for more information on the provided models and custom models
+see the [Models](models.md) page for more information on the provided models and custom models
 
 ### `features`
 array of feature objects as specified in the [Feature Configuration](#feature-configuration) section
