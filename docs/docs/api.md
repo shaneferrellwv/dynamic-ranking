@@ -95,7 +95,7 @@ data to be used for rankings
 ### `model`
 unique identifier of model to be used for rankings
 
-`model := [ 'weighted-sum' | 'weighted-product' | ... ]
+`model := [ 'weighted-sum' | 'weighted-product' | ... ]`
 
 see the [Models](models.md) page for more information on the provided models and custom models
 
