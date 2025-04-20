@@ -1,0 +1,4 @@
+site_name: dynamic-ranking
+nav:
+  - Quick Start: index.md
+  - API Reference: api.md
