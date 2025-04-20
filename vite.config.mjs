@@ -11,7 +11,7 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: path.resolve('fanscale/docs'),
+          src: path.resolve('fanscale/docs/*'), // <–– copy contents, not the folder
           dest: 'docs',
         },
       ],
