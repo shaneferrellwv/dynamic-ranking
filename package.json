@@ -5,6 +5,8 @@
   },
   "devDependencies": {
     "vite": "^6.2.5",
+    "vite-plugin-static-copy": "^2.3.1",
     "vitest": "^3.0.6"
-  }
+  },
+  "type": "module"
 }
