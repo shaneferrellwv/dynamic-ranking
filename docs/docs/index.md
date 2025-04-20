@@ -9,7 +9,7 @@ client-side library for building interactive dyanamic weighted ranking systems o
     import { DynamicRanking } from "../lib/dynamic-ranking.js";
 
     // get data for rankings
-    var rawData = await fetchData(dataSource);
+    var rawData = await fetchData('https://external-api.com');
 
     // manipulate/parse data from file as necessary
     rawData = rawData['stats'][0]['splits'];

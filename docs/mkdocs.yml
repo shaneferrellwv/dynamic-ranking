@@ -1,4 +1,14 @@
 site_name: dynamic-ranking
+
 nav:
   - Quick Start: index.md
   - API Reference: api.md
+  - Models: models.md
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
+  - js/katex-init.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
