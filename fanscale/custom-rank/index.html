@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dynamic Rankings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Custom Dynamic Rankings</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="https://github.com/shaneferrellwv/dynamic-ranking">Library</a>
+            </div>
+        </nav>
+
+        <div class="selection-container">
+          <div class="selectors">
+            <label for="file">File<br>
+              <input type="file" id="csvInput" accept=".csv,text/csv" />
+            </label>
+
+            <label for="primary-key">Primary Key
+              <select id="primary-key">
+              </select>
+            </label>
+            
+            <label for="model">Model
+              <select id="model">
+                <option value="weighted-sum">weighted sum</option>
+                <option value="weighted-product">weighted product</option>
+              </select>
+            </label>
+            
+            <label for="sort">Rankings Sort Order
+              <select id="sort">
+                <option value="descending">descending</option>
+                <option value="ascending">ascending</option>
+              </select>
+            </label>
+            
+          </div>
+
+          <div id='sliders-container' class="sliders-container">
+            <p>Sliders content placeholder...</p>
+        </div>
+            
+        </div>
+
+        <div id='rankings-container' class="rankings-container">
+          <table id='rankings-table' class="rankings-table">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+
+    </div>
+
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./custom-rank.js"></script>
+</body>
+</html>

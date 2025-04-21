@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+console.log('Resolved docs path:', path.resolve('fanscale/docs'))
 
 export default defineConfig({
   root: 'fanscale',
@@ -11,10 +12,15 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: path.resolve('fanscale/docs/*'), // <–– copy contents, not the folder
+          src: 'docs/**/*', // this now resolves to fanscale/docs/**
           dest: 'docs',
+        },
+        {
+          src: 'custom-rank/**/*', // resolves to fanscale/custom-rank/**
+          dest: 'custom',
         },
       ],
     }),
+     
   ],
 })

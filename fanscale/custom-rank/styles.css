@@ -1,0 +1,202 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.logo a {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.nav-links a {
+    margin-left: 16px;
+    margin-right: 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.selection-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.selectors {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 15px;
+    background-color: #e2ece6;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.sliders-container {
+    flex: 2;
+    border-radius: 15px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.slider-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.slider-group label {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+select, button, input[type="number"], input[type="file"] {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    appearance: none;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-align: center;
+    box-sizing: border-box;
+    border-color: rgb(124, 124, 124);
+    color: black;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px 30px 8px 10px; /* Adjusted padding to make room for the arrow */
+    flex-grow: 1;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0; /* Sharp edges */
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%; /* Ensure the select takes up full width */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    color: black; /* Ensure text is black */
+}
+
+.rankings-container {
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+}
+
+.rankings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f5f5f5;
+  }
+  
+  .rankings-table th,
+  .rankings-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+
+@media (max-width: 768px) {
+    .selection-container {
+        flex-direction: column;
+    }
+
+    .selectors {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+.new-slider-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+}
+    
+.feature-dropdown {
+    flex: 1;
+    min-width: 0; /* Prevents overflow */
+}
+    
+.add-slider-btn {
+    width: 100px; /* Fixed width */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+      
+
+.slider-element {
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    height: 5vh;           /* or whatever height you want */
+    gap: 20px;               /* optional spacing between items */
+    text-align: center;
+}
+
+.slider-label {
+    flex: 1;
+    min-width: 65px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.slider-input {
+    flex: 10;
+}
+
+.slider-value {
+    min-width: 30px;
+}
+
+.remove-button {
+    flex: 1;
+    cursor: pointer; /* optional: pointer on hover */
+  }
+  
