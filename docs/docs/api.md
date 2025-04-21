@@ -5,9 +5,9 @@
 The library supports data in JSON and CSV formats. Data from any external API can be fetched on the client side via the library's public `fetchData()` function. Data must have named labels and the data's contents (except for the primary key) must be numeric to create rankings.
 
     const data = [
-        { Model: 'Toyota Corolla', Horsepower: 139, Weight: 1295, Fuel Efficiency: 6.8, Price: 21000}
-        { Model: 'Honda Civic', Horsepower: 158, Weight: 1270, Fuel Efficiency: 6.4, Price: 23000}
-        { Model: 'Mazda 3', Horsepower: 186, Weight: 1340, Fuel Efficiency: 6.6, Price: 24000}
+        { Model: 'Toyota Corolla', Horsepower: 139, Weight: 1295, Fuel Efficiency: 6.8, Price: 21000 }
+        { Model: 'Honda Civic', Horsepower: 158, Weight: 1270, Fuel Efficiency: 6.4, Price: 23000 }
+        { Model: 'Mazda 3', Horsepower: 186, Weight: 1340, Fuel Efficiency: 6.6, Price: 24000 }
     ];
 
 

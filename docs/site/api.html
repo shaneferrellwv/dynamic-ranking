@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://fanscale.dev/docs/api.html">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>API Reference - dynamic-ranking</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">dynamic-ranking</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Quick Start</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="api.html" class="nav-link active" aria-current="page">API Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="models.html" class="nav-link">Models</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="index.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="models.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#api-reference" class="nav-link">API Reference</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#dataset" class="nav-link">Dataset</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#feature-configuration" class="nav-link">Feature Configuration</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#required-properties" class="nav-link">Required Properties</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#optional-properties" class="nav-link">Optional Properties</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#creating-your-ranking-system" class="nav-link">Creating Your Ranking System</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#dynamicranking-constructor-parameters" class="nav-link">DynamicRanking Constructor Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="api-reference">API Reference</h1>
+<h2 id="dataset">Dataset</h2>
+<p>The library supports data in JSON and CSV formats. Data from any external API can be fetched on the client side via the library's public <code>fetchData()</code> function. Data must have named labels and the data's contents (except for the primary key) must be numeric to create rankings.</p>
+<pre><code>const data = [
+    { Model: 'Toyota Corolla', Horsepower: 139, Weight: 1295, Fuel Efficiency: 6.8, Price: 21000 }
+    { Model: 'Honda Civic', Horsepower: 158, Weight: 1270, Fuel Efficiency: 6.4, Price: 23000 }
+    { Model: 'Mazda 3', Horsepower: 186, Weight: 1340, Fuel Efficiency: 6.6, Price: 24000 }
+];
+</code></pre>
+<h1 id="feature-configuration">Feature Configuration</h1>
+<p>Decision-making criteria must be specified prior to creation of the DyanmicRanking object. Features are provided in an array of objects, each with the following fields:</p>
+<pre><code>const features = [
+    { id: 'Horsepower', name: 'Horsepower', path: 'Horsepower', normalization: 'linear', strategy: 'maximize' }
+    { id: 'Weight', name: 'Weight', path: 'Weight', normalization: 'linear', strategy: 'minimize' }
+    { id: 'FuelEfficiency', name: 'Fuel Efficiency', path: 'Fuel Efficiency', normalization: 'standard', strategy: 'maximize' }
+    { id: 'Price', name: 'Price', path: 'Price', normalization: 'standard', strategy: 'minimize' }
+];
+</code></pre>
+<h2 id="required-properties">Required Properties</h2>
+<h3 id="id"><code>id</code></h3>
+<p>contains the unique identifier for the feature</p>
+<p>* id property can only contain <strong>alphanumeric characters</strong></p>
+<h3 id="name"><code>name</code></h3>
+<p>contains the display name for the identifier</p>
+<h3 id="path"><code>path</code></h3>
+<p>specifies the path to nested data using colons as delimiter</p>
+<h3 id="normalization"><code>normalization</code></h3>
+<p>specifies the normalization technique for this feature</p>
+<p><code>normalization := [ 'linear' | 'log' | 'standard' ]</code></p>
+<h3 id="strategy"><code>strategy</code></h3>
+<p>specifies if the feature should recieve higher scores for high values or low values</p>
+<p><code>strategy := [ 'maximize' | 'minimize' ]</code></p>
+<h2 id="optional-properties">Optional Properties</h2>
+<h3 id="defaultweight"><code>defaultWeight</code></h3>
+<p>specifies this feature's default weight for the intial rankings</p>
+<p>if this property is absent, default weight of 0 is used</p>
+<h3 id="minweight"><code>minWeight</code></h3>
+<p>specifies the lower bound for this feature's weight</p>
+<p>if this property is absent, default minimum weight of 0 is used</p>
+<h3 id="maxweight"><code>maxWeight</code></h3>
+<p>specifes the upper bound for this feature's weight</p>
+<p>if this property is absent, default maximum weight of 10 is used</p>
+<h1 id="creating-your-ranking-system">Creating Your Ranking System</h1>
+<p>A ranking system is created by calling the public constructor for the DynamicRanking class as follows:</p>
+<pre><code>import { DynamicRanking } from "../lib/dynamic-ranking.js";
+
+new DynamicRanking(
+    slidersContainerId,
+    rankingsContainerId,
+    data,
+    model,
+    features,
+    primaryKey,
+    digits,
+    sort
+);
+</code></pre>
+<h2 id="dynamicranking-constructor-parameters">DynamicRanking Constructor Parameters</h2>
+<h3 id="sliderscontainerid"><code>slidersContainerId</code></h3>
+<p>id of the HTML div element to target to render sliders and user controls</p>
+<h3 id="rankingscontainerid"><code>rankingsContainerId</code></h3>
+<p>id of the HTML div element to target to render rankings and scores</p>
+<h3 id="data"><code>data</code></h3>
+<p>data to be used for rankings</p>
+<p>* each item in the data must contain the primary key</p>
+<h3 id="model"><code>model</code></h3>
+<p>unique identifier of model to be used for rankings</p>
+<p><code>model := [ 'weighted-sum' | 'weighted-product' | ... ]</code></p>
+<p>see the <a href="models.html">Models</a> page for more information on the provided models and custom models</p>
+<h3 id="features"><code>features</code></h3>
+<p>array of feature objects as specified in the <a href="#feature-configuration">Feature Configuration</a> section</p>
+<h3 id="primarykey"><code>primaryKey</code></h3>
+<p>specifies the field to uniquely identify and display each item in the dataset</p>
+<p>the primaryKey is an object with two properties:</p>
+<ul>
+<li><code>id</code>: a unique identifier used internally that contains only alphanumeric characters</li>
+<li><code>path</code>: a string representing the location of the value within each item (using colons for nested keys)</li>
+</ul>
+<h3 id="digits"><code>digits</code></h3>
+<p>number of digits to be rounded to when calculating score</p>
+<h3 id="sort"><code>sort</code></h3>
+<p>specifies how rankings should be sorted</p>
+<p><code>sort := [ 'descending' | 'ascending' ]</code></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+        <script src="js/katex-init.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
