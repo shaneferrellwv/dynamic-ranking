@@ -1,3 +1,7 @@
+/custom/*.{js,css,svg,png,jpg,webp,ico,json,txt,woff2,woff}  /custom/:splat  200
+/docs/*.{js,css,svg,png,jpg,webp,ico,json,txt,woff2,woff}    /docs/:splat   200
+
+# Now handle client-side routing
 /docs/*    /docs/index.html   200
+/custom/*  /custom/index.html 200
 /*         /index.html        200
-/custom/*   /custom/index.html   200

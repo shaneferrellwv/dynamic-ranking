@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-console.log('Resolved docs path:', path.resolve('fanscale/docs'))
 
 export default defineConfig({
   root: 'fanscale',
