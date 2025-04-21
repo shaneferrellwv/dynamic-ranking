@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
-import path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import path from 'path'
 
 export default defineConfig({
   root: 'fanscale',
@@ -11,15 +11,14 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'docs/**/*', // this now resolves to fanscale/docs/**
+          src: 'docs/**/*',
           dest: 'docs',
         },
         {
-          src: 'custom-rank/**/*', // resolves to fanscale/custom-rank/**
+          src: 'custom-rank/**/*',
           dest: 'custom',
         },
       ],
     }),
-     
   ],
 })

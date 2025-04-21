@@ -1,4 +1,4 @@
-import { createDynamicRanking } from "./custom-rank";
+import { createDynamicRanking } from "./custom-rank.js";
 
 document.getElementById('csvInput').addEventListener('change', function(event) {
     const file = event.target.files[0];

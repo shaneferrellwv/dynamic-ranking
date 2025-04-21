@@ -1,6 +1,6 @@
-import { fetchData } from "../../lib/data-fetch.js";
-import { clean } from "../../lib/clean.js";
-import { DynamicRanking } from "../../lib/dynamic-ranking.js";
+import { fetchData } from "/lib/data-fetch.js";
+import { clean } from "/lib/clean.js";
+import { DynamicRanking } from "/lib/dynamic-ranking.js";
 
 export async function createDynamicRanking(rawData) {
     try {
